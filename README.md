@@ -1,1 +1,2 @@
 # Malaria-Classifier-Backbone
+Fine-tunes the same two 'found' community checkpoint backbones, a from-scratch CNN, and a matched ImageNet-pretrained reimplement on shrinking label fractions (100%/25%/10%/2%) of both the field's standard NIH-mirror binary task and its class-imbalanced, comparatively under-used BBBC041 benchmark, to find where -- if anywhere -- the label-efficiency ranking among backbones of different pretraining origin crosses.
