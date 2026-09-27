@@ -1,0 +1,63 @@
+============================================================
+1. LOADING NIH MALARIA DATASET
+============================================================
+
+Dataset:
+DatasetDict({
+    train: Dataset({
+        features: ['image', 'label'],
+        num_rows: 27558
+    })
+})
+
+Number of training images: 27558
+Features: {'image': Image(mode=None, decode=True), 'label': Value('int64')}
+
+Class labels:
+  0: Parasitized
+  1: Uninfected
+
+Full training-set class distribution:
+  0 (Parasitized): 13779 (50.00%)
+  1 (Uninfected): 13779 (50.00%)
+
+============================================================
+2. LOADING DINOv2 MALARIA BACKBONE
+============================================================
+
+Model loaded successfully.
+Model type: dinov2
+Processor size configuration: {'shortest_edge': 256}
+Expected shortest edge: 256
+Number of labels: 2
+Model labels:
+  0: sain
+  1: paludisme
+
+============================================================
+3. TESTING STRATIFIED SUBSAMPLING
+============================================================
+
+Requested fraction: 10%
+Full training set: 27558 images
+Subset: 2756 images
+
+10% subset class distribution:
+  0 (Parasitized): 1378 (50.00%)
+  1 (Uninfected): 1378 (50.00%)
+
+Class-ratio verification:
+  Parasitized: full=0.5000, subset=0.5000
+  Uninfected: full=0.5000, subset=0.5000
+
+============================================================
+4. TESTING ALL LABEL FRACTIONS
+============================================================
+100% -> 27558 images
+25% -> 6890 images
+10% -> 2756 images
+2% -> 552 images
+
+============================================================
+MILESTONE 1 SETUP CHECK COMPLETE
+============================================================
