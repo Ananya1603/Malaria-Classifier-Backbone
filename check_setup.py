@@ -27,10 +27,17 @@ train = dataset["train"]
 print(f"\nNumber of training images: {len(train)}")
 print(f"Features: {train.features}")
 
-label_feature = train.features["label"]
+
+# The dataset stores labels as integers.
+# We define the class names explicitly.
+label_names = {
+    0: "Parasitized",
+    1: "Uninfected"
+}
 
 print("\nClass labels:")
-for label_id, label_name in enumerate(label_feature.names):
+
+for label_id, label_name in label_names.items():
     print(f"  {label_id}: {label_name}")
 
 
@@ -40,10 +47,11 @@ full_counts = Counter(train["label"])
 print("\nFull training-set class distribution:")
 
 for label_id, count in sorted(full_counts.items()):
+
     percentage = 100 * count / len(train)
 
     print(
-        f"  {label_id} ({label_feature.names[label_id]}): "
+        f"  {label_id} ({label_names[label_id]}): "
         f"{count} ({percentage:.2f}%)"
     )
 
@@ -70,6 +78,7 @@ size = processor.size
 print(f"Processor size configuration: {size}")
 
 if isinstance(size, dict):
+
     height = size.get("height")
     width = size.get("width")
 
@@ -77,10 +86,14 @@ if isinstance(size, dict):
         print(f"Expected input size: {height} x {width}")
 
     elif "shortest_edge" in size:
-        print(f"Expected shortest edge: {size['shortest_edge']}")
+        print(
+            f"Expected shortest edge: "
+            f"{size['shortest_edge']}"
+        )
 
 else:
     print(f"Processor size: {size}")
+
 
 print(f"Number of labels: {model.config.num_labels}")
 
@@ -100,6 +113,7 @@ print("=" * 60)
 
 
 def get_stratified_subset(dataset, fraction, seed=42):
+
     """
     Return a stratified subset containing approximately
     `fraction` of the dataset while preserving class ratios.
@@ -129,7 +143,9 @@ def get_stratified_subset(dataset, fraction, seed=42):
             replace=False
         )
 
-        selected_indices.extend(chosen.tolist())
+        selected_indices.extend(
+            chosen.tolist()
+        )
 
     rng.shuffle(selected_indices)
 
@@ -148,9 +164,21 @@ subset = get_stratified_subset(
     seed=SEED
 )
 
-print(f"\nRequested fraction: {fraction * 100:.0f}%")
-print(f"Full training set: {len(train)} images")
-print(f"Subset: {len(subset)} images")
+print(
+    f"\nRequested fraction: "
+    f"{fraction * 100:.0f}%"
+)
+
+print(
+    f"Full training set: "
+    f"{len(train)} images"
+)
+
+print(
+    f"Subset: "
+    f"{len(subset)} images"
+)
+
 
 subset_counts = Counter(subset["label"])
 
@@ -161,7 +189,8 @@ for label_id, count in sorted(subset_counts.items()):
     percentage = 100 * count / len(subset)
 
     print(
-        f"  {label_id} ({label_feature.names[label_id]}): "
+        f"  {label_id} "
+        f"({label_names[label_id]}): "
         f"{count} ({percentage:.2f}%)"
     )
 
@@ -174,12 +203,18 @@ print("\nClass-ratio verification:")
 
 for label_id in sorted(full_counts):
 
-    full_ratio = full_counts[label_id] / len(train)
+    full_ratio = (
+        full_counts[label_id] /
+        len(train)
+    )
 
-    subset_ratio = subset_counts[label_id] / len(subset)
+    subset_ratio = (
+        subset_counts[label_id] /
+        len(subset)
+    )
 
     print(
-        f"  {label_feature.names[label_id]}: "
+        f"  {label_names[label_id]}: "
         f"full={full_ratio:.4f}, "
         f"subset={subset_ratio:.4f}"
     )
