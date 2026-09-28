@@ -1,0 +1,188 @@
+MILESTONE 2 RESULTS
+===================
+
+Project: Malaria Classifier Backbone
+Milestone: Data Pipeline and Reproducible Splits
+
+
+1. NIH MALARIA DATASET
+----------------------
+
+Dataset:
+dpdl-benchmark/malaria
+
+Total images:
+27,558
+
+Canonical binary label mapping:
+0 = Parasitized
+1 = Uninfected
+
+Split strategy:
+80/20 stratified train/test split
+
+Random seed:
+42
+
+Training set:
+22,046 images
+
+Test set:
+5,512 images
+
+Training label distribution:
+Parasitized (0): 11,023
+Uninfected (1): 11,023
+
+Test label distribution:
+Parasitized (0): 2,756
+Uninfected (1): 2,756
+
+Reproducibility:
+The fixed NIH test indices are stored in:
+test_indices.npy
+
+All future NIH experiments must reuse this test set.
+
+
+2. BBBC041 P. VIVAX DATASET
+---------------------------
+
+Raw annotation source images:
+1,328
+
+Original annotation files:
+training.json: 1,208 source images
+test.json: 120 source images
+
+Canonical binary label mapping:
+0 = Parasitized
+1 = Uninfected
+
+BBBC041 category mapping:
+
+Parasitized (0):
+- ring
+- trophozoite
+- schizont
+- gametocyte
+
+Uninfected (1):
+- red blood cell
+
+Excluded:
+- leukocyte
+- difficult
+
+
+3. BBBC041 IMAGE-LEVEL SPLIT
+----------------------------
+
+Split strategy:
+80/20 split at SOURCE-IMAGE level before cell crop extraction
+
+Random seed:
+42
+
+Training source images:
+1,062
+
+Test source images:
+266
+
+Source-image overlap between train and test:
+0
+
+Leakage check:
+PASSED
+
+
+4. BBBC041 CELL CROP RESULTS
+----------------------------
+
+Training crops:
+68,610
+
+Training binary label distribution:
+Parasitized (0): 1,961
+Uninfected (1): 66,649
+
+Training category counts:
+gametocyte: 120
+ring: 431
+schizont: 166
+trophozoite: 1,244
+red blood cell: 66,649
+
+
+Test crops:
+16,876
+
+Test binary label distribution:
+Parasitized (0): 491
+Uninfected (1): 16,385
+
+Test category counts:
+gametocyte: 36
+ring: 91
+schizont: 24
+trophozoite: 340
+red blood cell: 16,385
+
+
+5. DATA LEAKAGE VERIFICATION
+----------------------------
+
+Train source images:
+1,062
+
+Test source images:
+266
+
+Source-image overlap:
+0
+
+Result:
+ALL CHECKS PASSED
+
+
+6. REPRODUCIBILITY ARTIFACTS
+----------------------------
+
+NIH:
+- data_utils.py
+- test_indices.npy
+- verify_nih.py
+
+BBBC041:
+- bbbc041_utils.py
+- train_image_ids.npy
+- test_image_ids.npy
+- train_metadata.csv
+- test_metadata.csv
+
+Raw BBBC041 images and generated cell crops are excluded from
+GitHub using .gitignore.
+
+The fixed image-level split and metadata manifests are retained
+for reproducibility.
+
+
+7. FINAL MILESTONE 2 STATUS
+---------------------------
+
+[PASS] scikit-learn added to requirements.txt
+[PASS] NIH canonical label mapping implemented
+[PASS] NIH 80/20 stratified split implemented
+[PASS] NIH fixed test indices saved
+[PASS] BBBC041 annotations parsed
+[PASS] BBBC041 canonical binary mapping implemented
+[PASS] BBBC041 split performed at source-image level
+[PASS] BBBC041 80/20 split created with seed 42
+[PASS] Cell crops extracted after source-image splitting
+[PASS] Crop-to-source-image metadata preserved
+[PASS] Zero source-image overlap verified
+[PASS] Fixed BBBC041 image IDs saved
+[PASS] Data pipeline committed for reproducibility
+
+MILESTONE 2 COMPLETE
