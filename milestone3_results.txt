@@ -1,0 +1,99 @@
+/Users/ananyamatta/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+============================================================
+NIH
+============================================================
+Loading existing test indices from test_indices.npy
+
+NIH | 100%
+Total: 22046
+  label 0: 11023 (50.00%)
+  label 1: 11023 (50.00%)
+Saved: subsets/nih/fraction_100.json
+
+NIH | 25% | seed=42
+Total: 5512
+  label 0: 2756 (50.00%)
+  label 1: 2756 (50.00%)
+Saved: subsets/nih/fraction_25_seed_42.json
+
+NIH | 25% | seed=43
+Total: 5512
+  label 0: 2756 (50.00%)
+  label 1: 2756 (50.00%)
+Saved: subsets/nih/fraction_25_seed_43.json
+
+NIH | 10% | seed=42
+Total: 2205
+  label 0: 1103 (50.02%)
+  label 1: 1102 (49.98%)
+Saved: subsets/nih/fraction_10_seed_42.json
+
+NIH | 10% | seed=43
+Total: 2205
+  label 0: 1103 (50.02%)
+  label 1: 1102 (49.98%)
+Saved: subsets/nih/fraction_10_seed_43.json
+
+NIH | 2% | seed=42
+Total: 441
+  label 0: 221 (50.11%)
+  label 1: 220 (49.89%)
+Saved: subsets/nih/fraction_2_seed_42.json
+
+NIH | 2% | seed=43
+Total: 441
+  label 0: 221 (50.11%)
+  label 1: 220 (49.89%)
+Saved: subsets/nih/fraction_2_seed_43.json
+
+============================================================
+BBBC041
+============================================================
+
+BBBC041 | 100%
+Total: 68610
+  label 0: 1961 (2.86%)
+  label 1: 66649 (97.14%)
+Saved: subsets/bbbc041/fraction_100.csv
+
+BBBC041 | 25% | seed=42
+Total: 17152
+  label 0: 490 (2.86%)
+  label 1: 16662 (97.14%)
+Saved: subsets/bbbc041/fraction_25_seed_42.csv
+
+BBBC041 | 25% | seed=43
+Total: 17152
+  label 0: 490 (2.86%)
+  label 1: 16662 (97.14%)
+Saved: subsets/bbbc041/fraction_25_seed_43.csv
+
+BBBC041 | 10% | seed=42
+Total: 6861
+  label 0: 196 (2.86%)
+  label 1: 6665 (97.14%)
+Saved: subsets/bbbc041/fraction_10_seed_42.csv
+
+BBBC041 | 10% | seed=43
+Total: 6861
+  label 0: 196 (2.86%)
+  label 1: 6665 (97.14%)
+Saved: subsets/bbbc041/fraction_10_seed_43.csv
+
+BBBC041 | 2% | seed=42
+Total: 1372
+  label 0: 39 (2.84%)
+  label 1: 1333 (97.16%)
+Saved: subsets/bbbc041/fraction_2_seed_42.csv
+
+BBBC041 | 2% | seed=43
+Total: 1372
+  label 0: 39 (2.84%)
+  label 1: 1333 (97.16%)
+Saved: subsets/bbbc041/fraction_2_seed_43.csv
+
+============================================================
+Milestone 3 subset generation complete.
+============================================================
