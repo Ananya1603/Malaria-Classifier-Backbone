@@ -3,3 +3,8 @@ __pycache__/
 *.pyc
 .DS_Store
 .ipynb_checkpoints/
+
+# Local BBBC041 data
+/data/bbbc041/
+/data/bbbc041_processed/train/
+/data/bbbc041_processed/test/
