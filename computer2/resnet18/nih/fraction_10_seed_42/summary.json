@@ -1,0 +1,11 @@
+{
+  "completed_optimizer_steps": 5000,
+  "required_optimizer_steps": 5000,
+  "best_validation_accuracy": 0.9551020408163265,
+  "best_validation_step": 2250,
+  "final_logged_validation_accuracy": 0.9523809523809523,
+  "final_logged_validation_balanced_accuracy": 0.9523836163704663,
+  "final_logged_validation_mcc": 0.9048252979729089,
+  "test_used": false,
+  "completed": true
+}

@@ -1,0 +1,29 @@
+{
+  "model": "resnet18",
+  "initialization": "ResNet18_Weights.IMAGENET1K_V1",
+  "classifier": "fresh Linear(512, 1)",
+  "full_finetuning": true,
+  "dataset": "nih",
+  "fraction_percent": 2,
+  "seed": 42,
+  "batch_size": 32,
+  "max_optimizer_steps": 5000,
+  "official_optimizer_steps": 5000,
+  "input_size": [
+    224,
+    224
+  ],
+  "loss": "BCEWithLogitsLoss",
+  "negative_count": null,
+  "positive_count": null,
+  "pos_weight": null,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "optimizer": "AdamW",
+  "eval_every_optimizer_steps": 250,
+  "training_samples": 396,
+  "validation_samples": 2205,
+  "validation_used": true,
+  "test_used_during_training": false,
+  "smoke_test": false
+}
