@@ -1,0 +1,17 @@
+{
+  "status": "complete",
+  "dataset": "nih",
+  "fraction_percent": 100,
+  "seed": 43,
+  "optimizer_steps": 5000,
+  "epochs": 9,
+  "effective_train_size": 19841,
+  "validation_size": 2205,
+  "final_train_loss": 0.10219640075229108,
+  "final_train_accuracy": 0.962890625,
+  "final_validation_loss": 0.12979214302266265,
+  "final_validation_accuracy": 0.9573696145124716,
+  "final_validation_balanced_accuracy": 0.957368783041795,
+  "final_validation_mcc": 0.9147450917466027,
+  "pos_weight": null
+}

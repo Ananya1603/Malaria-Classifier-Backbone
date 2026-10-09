@@ -1,0 +1,30 @@
+{
+  "model": "small_cnn",
+  "initialization": "from_scratch",
+  "dataset": "nih",
+  "fraction_percent": 10,
+  "seed": 42,
+  "input_size": [
+    3,
+    80,
+    80
+  ],
+  "batch_size": 32,
+  "max_optimizer_steps": 5000,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0,
+  "loss": "BCEWithLogitsLoss",
+  "pos_weight": null,
+  "augmentation": "none",
+  "preprocessing": "RGB resize 80x80 + ToTensor [0,1]",
+  "validation_protocol": "Fixed 10% validation split from frozen M2 training split; validation seed 2026; validation examples excluded from M3 subset at M4 training time; frozen test set untouched.",
+  "dataset_info": {
+    "manifest": "C:\\Users\\E028.09\\Desktop\\Malaria-Classifier-Backbone\\subsets\\nih\\fraction_10_seed_42.json",
+    "original_subset_size": 2205,
+    "effective_train_size": 1970,
+    "validation_size": 2205
+  },
+  "device": "cuda",
+  "smoke_test": false
+}

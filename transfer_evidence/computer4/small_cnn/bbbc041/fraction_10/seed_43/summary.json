@@ -1,0 +1,17 @@
+{
+  "status": "complete",
+  "dataset": "bbbc041",
+  "fraction_percent": 10,
+  "seed": 43,
+  "optimizer_steps": 5000,
+  "epochs": 27,
+  "effective_train_size": 6140,
+  "validation_size": 6991,
+  "final_train_loss": 0.00872480362886563,
+  "final_train_accuracy": 0.91796875,
+  "final_validation_loss": 0.016511621414344722,
+  "final_validation_accuracy": 0.9429266199399228,
+  "final_validation_balanced_accuracy": 0.9120924853951737,
+  "final_validation_mcc": 0.5090870776253258,
+  "pos_weight": 0.03089321692411014
+}
