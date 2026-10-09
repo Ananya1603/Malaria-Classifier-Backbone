@@ -1,0 +1,43 @@
+{
+  "model": "dinov2",
+  "checkpoint": "Sadou/malaria-detector-dinov2-tanzania",
+  "dataset": "nih",
+  "fraction_percent": 100,
+  "training_seed": 42,
+  "max_optimizer_steps": 5000,
+  "batch_size": 32,
+  "learning_rate": 1e-05,
+  "weight_decay": 0.01,
+  "optimizer": "AdamW",
+  "loss": "BCEWithLogitsLoss",
+  "pos_weight": null,
+  "training_samples": 19290,
+  "validation_samples": 2756,
+  "validation_fixed": true,
+  "test_used_during_training": false,
+  "input_size": [
+    518,
+    518
+  ],
+  "normalization_mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "normalization_std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "checkpoint_native_processor_size": 224,
+  "experiment_input_size_override": 518,
+  "eval_every_optimizer_steps": 250,
+  "full_backbone_trainable": true,
+  "fresh_binary_head": true,
+  "output_logits": 1,
+  "stopping_rule": "exact_optimizer_step_count",
+  "mixed_precision": true,
+  "amp_dtype": "float16",
+  "completed_optimizer_steps": 5000,
+  "best_validation_loss": 0.09213919123345432
+}
