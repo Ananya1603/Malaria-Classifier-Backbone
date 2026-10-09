@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "optimizer_steps_completed": 5000,
+  "final_epoch": 2.5974025974025974,
+  "final_train_loss": 0.09227922088862396,
+  "final_train_accuracy": 0.98825,
+  "final_validation_loss": 0.15272497193480983,
+  "final_validation_accuracy": 0.9522242883707625,
+  "final_validation_balanced_accuracy": 0.975412249705536,
+  "final_validation_mcc": 0.5958173086261784
+}
